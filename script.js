@@ -1,4 +1,4 @@
-// ==================== APP DATA ====================
+﻿// ==================== APP DATA ====================
 
 const PHASE_QUESTS = {
     'phase-y1': {
@@ -235,6 +235,7 @@ function saveState() {
 
 function applyTheme(hex) {
     document.documentElement.style.setProperty('--accent-primary', hex);
+
     document.getElementById('themeColor').value = hex;
 
     let c = hex.substring(1).split('');
@@ -242,10 +243,7 @@ function applyTheme(hex) {
         c = [c[0], c[0], c[1], c[1], c[2], c[2]];
     }
     c = '0x' + c.join('');
-    const r = (c >> 16) & 255;
-    const g = (c >> 8) & 255;
-    const b = c & 255;
-    const glow = `rgba(${r},${g},${b},0.4)`;
+    const glow = 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',0.4)';
     document.documentElement.style.setProperty('--accent-glow', glow);
 
     if (window.myCharts) {
@@ -253,67 +251,9 @@ function applyTheme(hex) {
     }
 }
 
-// ==================== TERMINAL LOGGING ====================
-function systemLog(message, type = 'info') {
-    const timestamp = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-    const outputPanel = document.getElementById('systemOutput');
-    
-    const entry = document.createElement('div');
-    entry.className = 'log-entry';
-    
-    const timeEl = document.createElement('span');
-    timeEl.className = 'log-time';
-    timeEl.textContent = `[${timestamp}]`;
-    
-    const msgEl = document.createElement('span');
-    msgEl.className = 'log-msg';
-    msgEl.textContent = message;
-    
-    entry.appendChild(timeEl);
-    entry.appendChild(msgEl);
-    outputPanel.appendChild(entry);
-    
-    // Auto-scroll to bottom
-    outputPanel.scrollTop = outputPanel.scrollHeight;
-    
-    // Keep only last 20 entries
-    const entries = outputPanel.querySelectorAll('.log-entry');
-    if (entries.length > 20) {
-        entries[0].remove();
-    }
-}
-
-function systemBootSequence() {
-    const messages = [
-        '[BOOT] INGENIUM 36 Operating System v2.0',
-        '[BOOT] Initializing CRT Engine...',
-        '[BOOT] Phosphor Display: ACTIVE',
-        '[BOOT] Scanline Emulation: 60Hz',
-        '[BOOT] Loading Career Kernel...',
-        '[BOOT] State Manager: ONLINE',
-        '[BOOT] Terminal I/O: READY',
-        '[BOOT] ═══════════════════════════════════',
-        '[SYSTEM] Ghost Terminal Core initialized.',
-        '[SYSTEM] Ready for engineering workload.'
-    ];
-    
-    let index = 0;
-    const interval = setInterval(() => {
-        if (index < messages.length) {
-            systemLog(messages[index]);
-            index++;
-        } else {
-            clearInterval(interval);
-        }
-    }, 200);
-}
-
 // ==================== CORE LOGIC ====================
 
 function initApp() {
-    // Boot sequence on app start
-    systemBootSequence();
-    
     loadState();
     updateDateDisplay();
     setupNavigation();
@@ -852,7 +792,6 @@ function setupEventListeners() {
         if (state.lastCheckIn && new Date(state.lastCheckIn).toDateString() === todayStr) {
             showToast('Already checked in for today! 🛡️');
             updateStreakDisplay(); // Re-sync UI state just in case
-            systemLog('[USER] Check-in attempted (already checked in today)');
             return;
         }
 
@@ -868,7 +807,6 @@ function setupEventListeners() {
         saveState();
         updateStreakDisplay();
         showToast('System Synchronized! 🔥 Streak increased.');
-        systemLog(`[USER] Daily check-in successful. Streak: ${state.streak} days`);
 
         // Cleanup after animation cycle
         setTimeout(() => {
@@ -962,7 +900,6 @@ function setupEventListeners() {
         state.theme = e.target.value;
         saveState();
         showToast('Color theme saved! 🎨');
-        systemLog(`[CONFIG] Theme changed to ${e.target.value}`);
     });
 
     const filters = document.querySelectorAll('.filter-btn');
@@ -975,7 +912,6 @@ function setupEventListeners() {
     });
 
     document.getElementById('resetBtn').addEventListener('click', () => {
-        systemLog('[USER] Reset system initiated');
         document.getElementById('resetModal').classList.add('active');
     });
     document.getElementById('cancelReset').addEventListener('click', () => {
