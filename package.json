@@ -11,7 +11,7 @@
     "appId": "com.ingenium.workstation",
     "win": {
       "target": "portable",
-      "icon": "favicon.svg"
+      "icon": "icon.png"
     }
   },
   "devDependencies": {
