@@ -1,0 +1,17 @@
+{
+  "name": "INGENIUM 36",
+  "short_name": "INGENIUM",
+  "description": "Premium VLSI Career Operating System targeting ₹36 LPA.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#05080e",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

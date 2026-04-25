@@ -1,0 +1,27 @@
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+function createWindow() {
+  const win = new BrowserWindow({
+    width: 1280,
+    height: 800,
+    title: "INGENIUM 36 | Workstation",
+    backgroundColor: '#05080e',
+    icon: path.join(__dirname, 'favicon.svg'),
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true
+    }
+  });
+
+  win.loadFile('index.html');
+  
+  // Remove menubar for a native "App" feel
+  win.setMenuBarVisibility(false);
+}
+
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
