@@ -5,9 +5,11 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1280,
     height: 800,
+    minWidth: 1000,
+    minHeight: 600,
     title: "INGENIUM 36 | Workstation",
     backgroundColor: '#05080e',
-    icon: path.join(__dirname, 'favicon.svg'),
+    icon: path.join(__dirname, 'icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true

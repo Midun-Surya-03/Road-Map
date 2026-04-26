@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="INGENIUM 36: VLSI Career Operating System & Roadmap"
+    />
+    <title>INGENIUM 36 | Way Through My Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#05080e" />
+  </head>
+
+  <body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect
+              x="2"
+              y="2"
+              width="24"
+              height="24"
+              rx="4"
+              stroke="currentColor"
+              stroke-width="2"
+              class="theme-stroke"
+            />
+            <path
+              d="M8 14h12M14 8v12M8 8l4 4M20 8l-4 4M8 20l4-4M20 20l-4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              class="theme-stroke"
+            />
+          </svg>
+        </div>
+        <span class="nav-title theme-text-gradient">INGENIUM 36</span>
+      </div>
+      <div class="nav-links">
+        <a href="#dashboard" class="nav-link active" data-section="dashboard">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          Dashboard
+        </a>
+        <a href="#quests" class="nav-link" data-section="quests">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+            />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <line x1="10" y1="9" x2="8" y2="9" />
+          </svg>
+          Action Quests
+        </a>
+        <a href="#roadmap" class="nav-link" data-section="roadmap">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M12 2v20M2 12h20" stroke-linecap="round" />
+            <circle cx="12" cy="5" r="2" />
+            <circle cx="12" cy="12" r="2" />
+            <circle cx="12" cy="19" r="2" />
+          </svg>
+          Roadmap
+        </a>
+        <a href="#analytics" class="nav-link" data-section="analytics">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M18 20V10M12 20V4M6 20v-6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Analytics
+        </a>
+        <a href="#motivation" class="nav-link" data-section="motivation">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            />
+          </svg>
+          Why I Fight
+        </a>
+      </div>
+      <div class="nav-actions">
+        <!-- Theme Color Picker -->
+        <button class="btn-icon stun-hover" id="resetBtn" title="Reset Data">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M1 4v6h6M23 20v-6h-6" />
+            <path
+              d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <!-- ==================== DASHBOARD SECTION ==================== -->
+      <section class="section active staggered-container" id="dashboard">
+        <div class="section-header stagger-item">
+          <div class="greeting-area">
+            <h1 class="greeting" id="greeting">Good Morning 👋</h1>
+            <p class="greeting-sub">
+              SKCET Advantage / INGENIUM 36 Target: ₹36 LPA
+            </p>
+          </div>
+          <div class="date-display" id="dateDisplay"></div>
+        </div>
+
+        <!-- Top Grid -->
+        <div class="top-stats-grid stagger-item">
+          <div class="stat-card glass-panel stat-card-success">
+            <div class="stat-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M18 20V10M12 20V4M6 20v-6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="overallProgress">0%</span>
+              <span class="stat-label">Mission Progress</span>
+            </div>
+          </div>
+
+          <div class="stat-card glass-panel theme-icon">
+            <div class="stat-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="totalCompleted">0</span>
+              <span class="stat-label">Milestones Crushed</span>
+            </div>
+          </div>
+
+          <div class="stat-card glass-panel stat-card-warning">
+            <div class="stat-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span
+                class="stat-value"
+                id="currentPhase"
+                style="font-size: 1.5rem"
+                >Year 1</span
+              >
+              <span class="stat-label">Current Phase</span>
+            </div>
+          </div>
+
+          <div class="stat-card glass-panel stat-card-accent">
+            <div class="stat-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="totalTasks">0</span>
+              <span class="stat-label">Total Hurdles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Massive Journey Overview -->
+        <div class="progress-overview glass-panel stagger-item">
+          <div class="progress-header">
+            <h2>INGENIUM 36 Completion</h2>
+            <span
+              class="progress-percent theme-text-gradient"
+              id="journeyPercent"
+              >0%</span
+            >
+          </div>
+          <div class="progress-bar-container">
+            <div
+              class="progress-bar-fill theme-bg"
+              id="journeyBar"
+              style="width: 0%"
+            ></div>
+            <div class="progress-milestones">
+              <span class="milestone" style="left: 0%">Start</span>
+              <span class="milestone" style="left: 25%">Logic Core</span>
+              <span class="milestone" style="left: 50%">Verilog</span>
+              <span class="milestone" style="left: 75%">Tools/Intern</span>
+              <span class="milestone" style="left: 100%">₹20 LPA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standard Split Layout -->
+        <div class="clean-grid layout-2-col">
+          <div class="left-col">
+            <h3 class="stagger-item section-label">Stage Breakdowns</h3>
+            <div
+              class="phase-progress-grid stagger-item"
+              id="phaseProgressGrid"
+            >
+              <!-- Dynamically generated -->
+            </div>
+          </div>
+
+          <div class="right-col stagger-item">
+            <div
+              class="streak-card glass-panel stagger-item"
+              style="margin-bottom: 2rem"
+            >
+              <div
+                class="streak-header"
+                style="
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                  gap: 0.5rem;
+                "
+              >
+                <h3>🔥 Consistency Streak</h3>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                >
+                  <span class="streak-count" id="streakCount" style="margin: 0">
+                    0 days
+                  </span>
+                  <div
+                    class="cold-streak-indicator"
+                    style="
+                      font-size: 0.75rem;
+                      margin-top: 0.2rem;
+                      display: flex;
+                      align-items: center;
+                      gap: 0.4rem;
+                    "
+                  >
+                    <span style="opacity: 0.6">Cold Streaks:</span>
+                    <span
+                      id="freezeCount"
+                      style="font-weight: bold; color: var(--accent-primary)"
+                      >2</span
+                    >
+                    <span>❄️</span>
+                  </div>
+                </div>
+              </div>
+              <p class="streak-msg" id="streakMsg" style="text-align: center">
+                Small efforts daily = ₹3L/month eventually.
+              </p>
+              <button class="btn btn-glow stun-hover" id="checkInBtn">
+                Check In Now
+              </button>
+            </div>
+
+            <div class="upcoming-card glass-panel stagger-item">
+              <h3>📋 Up Next</h3>
+              <div class="upcoming-list" id="upcomingList">
+                <!-- Dynamically generated -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== QUESTS SECTION ==================== -->
+      <section class="section staggered-container" id="quests">
+        <div
+          class="section-header stagger-item"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: flex-end;
+          "
+        >
+          <div>
+            <h1>⚔️ Action Log</h1>
+            <p class="section-subtitle">
+              Execute these consistently to earn massive XP. Reset them when the
+              cycle restarts.
+            </p>
+          </div>
+          <div class="phase-broadcast" style="padding-bottom: 0.25rem">
+            <span
+              id="questPhaseLabel"
+              style="
+                color: var(--accent-primary);
+                font-family: var(--font-mono);
+                font-size: 0.85rem;
+                font-weight: 600;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 0.4rem 0.8rem;
+                border-radius: var(--radius-sm);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              "
+              >Active Protocol: Syncing...</span
+            >
+          </div>
+        </div>
+
+        <!-- GAMIFICATION LAYER -->
+        <div
+          class="quest-bento-grid stagger-item"
+          style="
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+          "
+        >
+          <!-- Gamification Level Hero -->
+          <div
+            class="gamification-hero glass-panel"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 1.5rem;
+              padding: 2rem;
+            "
+          >
+            <div
+              style="
+                position: relative;
+                min-width: 110px;
+                height: 110px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 50%;
+                border: 3px solid var(--accent-primary);
+                box-shadow: 0 0 25px var(--accent-glow);
+              "
+            >
+              <div style="text-align: center">
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: var(--text-secondary);
+                    display: block;
+                    margin-bottom: -5px;
+                  "
+                  >Lvl</span
+                >
+                <span
+                  id="userLevel"
+                  style="
+                    font-size: 3rem;
+                    font-weight: 800;
+                    line-height: 1;
+                    color: var(--text-primary);
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+                  "
+                  >1</span
+                >
+              </div>
+            </div>
+            <div style="flex: 1">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-end;
+                  margin-bottom: 0.25rem;
+                "
+              >
+                <div>
+                  <h2
+                    id="rankTitle"
+                    class="theme-text-gradient"
+                    style="font-size: 1.6rem; margin-bottom: 0"
+                  >
+                    Silicon Initiate
+                  </h2>
+                  <span
+                    style="color: var(--text-muted); font-size: 0.85rem"
+                    id="questCycles"
+                    >0</span
+                  ><span style="color: var(--text-muted); font-size: 0.85rem">
+                    Cycles Mined</span
+                  >
+                </div>
+                <div
+                  style="
+                    text-align: right;
+                    font-family: var(--font-mono);
+                    font-size: 0.95rem;
+                  "
+                >
+                  <span
+                    id="levelProgressText"
+                    style="color: var(--accent-primary); font-weight: 700"
+                    >0</span
+                  ><span style="color: var(--text-secondary)"> / </span
+                  ><span
+                    id="levelTargetText"
+                    style="color: var(--text-secondary)"
+                    >150</span
+                  >
+                </div>
+              </div>
+              <div
+                class="progress-bar-container"
+                style="
+                  height: 12px;
+                  margin-bottom: 0.75rem;
+                  background: rgba(0, 0, 0, 0.6);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  border-radius: var(--radius-full);
+                  overflow: hidden;
+                  position: relative;
+                "
+              >
+                <div
+                  class="progress-preview theme-bg"
+                  id="levelPreviewBar"
+                  style="
+                    width: 0%;
+                    position: absolute;
+                    height: 100%;
+                    opacity: 0;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    z-index: 0;
+                  "
+                ></div>
+                <div
+                  class="progress-bar-fill theme-bg"
+                  id="levelProgressBar"
+                  style="
+                    width: 0%;
+                    position: relative;
+                    height: 100%;
+                    transition: width 0.4s ease;
+                    z-index: 1;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(
+                        90deg,
+                        transparent,
+                        rgba(255, 255, 255, 0.4),
+                        transparent
+                      );
+                      animation: shimmer 2s infinite;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  font-size: 0.9rem;
+                  text-align: right;
+                  margin: 0;
+                "
+              >
+                Total Career XP:
+                <span
+                  id="questTotalXP"
+                  style="
+                    color: var(--text-primary);
+                    font-weight: 700;
+                    font-family: var(--font-mono);
+                  "
+                  >0</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- The Chart -->
+          <div
+            class="quest-chart glass-panel"
+            style="padding: 1.5rem; display: flex; flex-direction: column"
+          >
+            <h3
+              style="
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+                margin-bottom: 0.5rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Mining Velocity
+            </h3>
+            <div
+              style="
+                flex-grow: 1;
+                position: relative;
+                width: 100%;
+                min-height: 120px;
+              "
+            >
+              <canvas id="questActivityChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="clean-grid layout-2-col stagger-item">
+          <!-- Daily Quests -->
+          <div class="quest-card glass-panel" style="padding: 1.5rem">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+              "
+            >
+              <h3 style="color: var(--accent-primary)">
+                Mon-Fri: Daily Quests
+              </h3>
+              <button
+                id="resetDailiesBtn"
+                class="btn btn-outline stun-hover"
+                style="padding: 0.4rem 0.8rem; font-size: 0.8rem"
+              >
+                Reset Dailies
+              </button>
+            </div>
+            <div id="dailyQuestList" class="task-list"></div>
+          </div>
+
+          <!-- Weekly Quests -->
+          <div class="quest-card glass-panel" style="padding: 1.5rem">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+              "
+            >
+              <h3 style="color: var(--accent-primary)">Sat: Boss Fights</h3>
+              <button
+                id="resetWeekliesBtn"
+                class="btn btn-outline stun-hover"
+                style="padding: 0.4rem 0.8rem; font-size: 0.8rem"
+              >
+                Reset Weeklies
+              </button>
+            </div>
+            <div id="weeklyQuestList" class="task-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== ROADMAP SECTION ==================== -->
+      <section class="section staggered-container" id="roadmap">
+        <div class="section-header stagger-item">
+          <h1>🗺️ Master Plan</h1>
+          <p class="section-subtitle">
+            Formatted track towards high-tier Semiconductor placement.
+          </p>
+        </div>
+        <div class="roadmap-filters stagger-item">
+          <button class="filter-btn active stun-hover" data-filter="all">
+            All Phases
+          </button>
+          <button class="filter-btn stun-hover" data-filter="current">
+            Active Focus
+          </button>
+          <button class="filter-btn stun-hover" data-filter="completed">
+            Destroyed
+          </button>
+          <button class="filter-btn stun-hover" data-filter="upcoming">
+            Remaining
+          </button>
+        </div>
+        <div class="timeline stagger-item" id="timeline">
+          <!-- Dynamically generated -->
+        </div>
+      </section>
+
+      <!-- ==================== ANALYTICS SECTION ==================== -->
+      <section class="section staggered-container" id="analytics">
+        <div class="section-header stagger-item">
+          <h1>📊 Career Analytics</h1>
+          <p class="section-subtitle">
+            Track your competencies and progress metrics
+          </p>
+        </div>
+
+        <div class="analytics-bento-grid stagger-item">
+          <!-- Top Row: KPIs -->
+          <div class="kpi-card glass-panel bento-kpi">
+            <span class="j-stat-label">Days Active</span>
+            <span class="kpi-value theme-text" id="jDaysActive">0</span>
+          </div>
+          <div class="kpi-card glass-panel bento-kpi">
+            <span class="j-stat-label">Peak Streak</span>
+            <span class="kpi-value theme-text" id="jBestStreak">0</span>
+          </div>
+          <div class="kpi-card glass-panel bento-kpi">
+            <span class="j-stat-label">Milestones / Week</span>
+            <span class="kpi-value theme-text" id="jAvgWeekly">0</span>
+          </div>
+          <div class="kpi-card glass-panel bento-kpi">
+            <span class="j-stat-label">Market Value Index</span>
+            <span class="kpi-value theme-text" id="jMarketValue" style="font-size: 1.8rem">₹0</span>
+          </div>
+
+          <!-- Tier 1: Salary Trajectory (Full Width) -->
+          <div class="chart-card glass-panel bento-hero" style="grid-column: 1 / -1;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3>₹36 LPA Vector (Market Value vs. Target)</h3>
+              <span class="badge" style="background: var(--accent-primary); color: white; font-size: 0.7rem;">LIVE PROJECTION</span>
+            </div>
+            <div class="canvas-container" style="height: 350px;">
+              <canvas id="salaryTrajectoryChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Tier 2: Grind Heatmap (Full Width) -->
+          <div class="chart-card glass-panel bento-heatmap" style="grid-column: 1 / -1;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3>The 365-Day Grind (Contribution Heatmap)</h3>
+              <div id="heatmapLegend" style="display: flex; gap: 0.5rem; font-size: 0.7rem; align-items: center;">
+                <span>Less</span>
+                <div style="width: 12px; height: 12px; background: rgba(255,255,255,0.05); border-radius: 2px;"></div>
+                <div style="width: 12px; height: 12px; background: rgba(147, 51, 234, 0.3); border-radius: 2px;"></div>
+                <div style="width: 12px; height: 12px; background: rgba(147, 51, 234, 0.6); border-radius: 2px;"></div>
+                <div style="width: 12px; height: 12px; background: rgba(147, 51, 234, 0.9); border-radius: 2px;"></div>
+                <span>More</span>
+              </div>
+            </div>
+            <div class="heatmap-wrapper">
+              <div class="heatmap-labels">
+                <span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span><span>Sun</span>
+              </div>
+              <div class="heatmap-column">
+                <div id="heatmapMonths" class="heatmap-months"></div>
+                <div id="grindHeatmap" class="heatmap-container">
+                  <!-- Dynamically Generated -->
+                  <div class="system-booting">Initializing Neural Grid...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 3: Dependency Graph & Skill Radar -->
+          <div class="chart-card glass-panel bento-large-left" style="min-height: 400px;">
+             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3>Architect's Dependency Graph</h3>
+              <span style="font-size: 0.7rem; opacity: 0.6;">PATHWAY PERSPECTIVE</span>
+            </div>
+            <div id="dependencyGraph" class="graph-container">
+               <svg id="depSvg" width="100%" height="100%"></svg>
+            </div>
+          </div>
+          <div class="chart-card glass-panel bento-square-right">
+            <h3>Competency Radar</h3>
+            <div class="canvas-container">
+              <canvas id="skillChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== MOTIVATION SECTION ==================== -->
+      <section class="section staggered-container" id="motivation">
+        <div class="section-header stagger-item">
+          <h1>💎 INGENIUM 36</h1>
+          <p class="section-subtitle">
+            The underlying strategy behind the execution
+          </p>
+        </div>
+
+        <div class="motivation-content">
+          <!-- Salary Table -->
+          <div
+            class="salary-trajectory glass-panel stagger-item"
+            style="margin-bottom: 3rem"
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+              "
+            >
+              <span style="font-size: 2.5rem">📈</span>
+              <h2>The ₹3 Lakhs/Month Trajectory</h2>
+            </div>
+            <div class="table-wrapper" style="overflow-x: auto">
+              <table
+                style="
+                  width: 100%;
+                  border-collapse: collapse;
+                  text-align: left;
+                  font-size: 1.1rem;
+                "
+              >
+                <thead>
+                  <tr
+                    style="
+                      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+                      color: var(--text-secondary);
+                    "
+                  >
+                    <th style="padding: 1rem">Milestone</th>
+                    <th style="padding: 1rem">Year</th>
+                    <th style="padding: 1rem">Role</th>
+                    <th style="padding: 1rem">Target Comp (Monthly)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    style="border-bottom: 1px solid rgba(255, 255, 255, 0.05)"
+                  >
+                    <td style="padding: 1rem; font-weight: 600">Graduation</td>
+                    <td style="padding: 1rem">2029</td>
+                    <td style="padding: 1rem">Design/Verification Engineer</td>
+                    <td style="padding: 1rem" class="theme-text">
+                      ₹1.2L - ₹1.5L
+                    </td>
+                  </tr>
+                  <tr
+                    style="border-bottom: 1px solid rgba(255, 255, 255, 0.05)"
+                  >
+                    <td style="padding: 1rem; font-weight: 600">Level Up</td>
+                    <td style="padding: 1rem">2031</td>
+                    <td style="padding: 1rem">Senior Engineer</td>
+                    <td style="padding: 1rem" class="theme-text">
+                      ₹2.2L - ₹2.5L
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 1rem; font-weight: 600">Elite Level</td>
+                    <td style="padding: 1rem">2033</td>
+                    <td style="padding: 1rem">Staff/Lead Engineer</td>
+                    <td
+                      style="padding: 1rem; font-weight: 800"
+                      class="theme-text"
+                    >
+                      ₹3.5L - ₹4.5L
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="motivation-grid stagger-item">
+            <div class="motivation-card glass-panel">
+              <div class="motivation-icon">👨‍👩‍👦</div>
+              <h3>Parental Duty</h3>
+              <p contenteditable="true" id="parentsNote">
+                Set aside a "Parental Fund" from your first salary (₹20k/month).
+                Telling mom about this financial plan will turn her from a
+                skeptic into my biggest supporter.
+              </p>
+              <span class="edit-hint">Click to edit</span>
+            </div>
+            <div class="motivation-card glass-panel">
+              <div class="motivation-icon">💑</div>
+              <h3>The GF Dynamic</h3>
+              <p contenteditable="true" id="futureNote">
+                While I'm busy staring at RTL code and timing logs, I'm building
+                a bulletproof life. Show her this trajectory. This grind secures
+                the life she's used to.
+              </p>
+              <span class="edit-hint">Click to edit</span>
+            </div>
+            <div class="motivation-card glass-panel">
+              <div class="motivation-icon">👑</div>
+              <h3>The 'Son-in-Law' Strategy</h3>
+              <p contenteditable="true" id="selfNote">
+                When her dad checks in, speak with technical credibility
+                (FinFETs, 2nm nodes). If he sees I am an expert with a highly
+                lucrative plan, his ego will respect the competence.
+              </p>
+              <span class="edit-hint">Click to edit</span>
+            </div>
+          </div>
+
+          <div
+            class="quote-carousel glass-panel stagger-item"
+            id="quoteCarousel"
+          >
+            <div class="quote-card">
+              <blockquote id="dailyQuote">
+                "Hardware is just software crystallized."
+              </blockquote>
+              <cite id="quoteAuthor">— System Default</cite>
+            </div>
+            <button class="btn btn-outline stun-hover" id="newQuoteBtn">
+              Pull New Quote ✨
+            </button>
+          </div>
+
+          <!-- Personal Notes Journal -->
+          <div class="journal-section glass-panel stagger-item">
+            <h2>📝 Mission Logs</h2>
+            <div class="journal-input-area">
+              <textarea
+                id="journalInput"
+                placeholder="Record today's actions, doubts, or wins regarding the INGENIUM 36 parameters..."
+              ></textarea>
+              <button class="btn btn-glow stun-hover" id="addJournalBtn">
+                Save Log
+              </button>
+            </div>
+            <div class="journal-entries" id="journalEntries"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Reset Confirmation Modal -->
+    <div class="modal-overlay" id="resetModal">
+      <div class="modal glass-panel" style="max-width: 400px; padding: 2rem">
+        <h3 style="color: #ef4444; margin-bottom: 0.5rem; font-size: 1.5rem">
+          ⚠️ System Formatting Protocol
+        </h3>
+        <p
+          style="
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+          "
+        >
+          Select the specific memory arrays you wish to wipe back to factory
+          defaults.
+        </p>
+
+        <div
+          style="
+            text-align: left;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+          "
+        >
+          <label class="custom-checkbox-label">
+            <input type="checkbox" id="resetOptRoadmap" />
+            <span style="font-size: 0.95rem; color: var(--text-primary)"
+              >🗺️ 10-Year Master Roadmap</span
+            >
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" id="resetOptQuests" />
+            <span style="font-size: 0.95rem; color: var(--text-primary)"
+              >📈 Level, Total XP & Chart History</span
+            >
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" id="resetOptStreak" />
+            <span style="font-size: 0.95rem; color: var(--text-primary)"
+              >🔥 Check-Ins & Streaks</span
+            >
+          </label>
+          <label class="custom-checkbox-label">
+            <input type="checkbox" id="resetOptJournal" />
+            <span style="font-size: 0.95rem; color: var(--text-primary)"
+              >📝 Mission Logs & Motivation Notes</span
+            >
+          </label>
+        </div>
+
+        <div
+          class="modal-actions"
+          style="display: flex; gap: 1rem; justify-content: flex-end"
+        >
+          <button class="btn btn-outline stun-hover" id="cancelReset">
+            Abort
+          </button>
+          <button class="btn btn-danger stun-hover" id="confirmReset">
+            Execute Format
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="depTooltip" class="dep-tooltip"></div>
+  </body>
+</html>
